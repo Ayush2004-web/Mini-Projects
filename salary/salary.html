@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Salary Calculator</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./salary.css" />
+  </head>
+  <body>
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8 col-12">
+          <div class="card shadow-lg border-0 main-card">
+
+            <div class="card-header text-center">
+              <h1 class="title">Salary Calculator</h1>
+            </div>
+
+            <div class="card-body p-4">
+
+              <div class="mb-3">
+                <label class="form-label fw-bold fs-5">Enter Basic Salary</label>
+                <input
+                  type="number"
+                  id="basicSalary"
+                  class="form-control form-control-lg"
+                  placeholder="Enter Salary"
+                />
+                <div id="error" class="text-danger fw-bold mt-2"></div>
+              </div>
+
+              <div class="d-flex gap-3">
+                <button
+                  class="btn btn-success btn-lg w-50"
+                  id="calculateBtn"
+                  onclick="startCalculation()">
+                  <span id="btnText"> Calculate Gross Salary </span>
+                  <span
+                    id="spinner"
+                    class="spinner-border spinner-border-sm d-none"
+                  >
+                  </span>
+                </button>
+                <button class="btn btn-danger btn-lg w-50"onclick="resetForm()">Clear / Reset</button>
+              </div>
+
+              <div id="successMessage" class="alert alert-success mt-4 d-none">
+                Salary Calculated Successfully!
+              </div>
+              <div class="card mt-4 result-card" id="resultCard">
+                <div class="card-body">
+                  <h3 class="text-center mb-4">Salary Details</h3>
+
+                  <div id="result"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Scripts-->
+    <script src="./salary.js"></script>
+  </body>
+</html>
