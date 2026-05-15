@@ -40,5 +40,30 @@ function addNewTask() {
 
     document.getElementById("taskList").appendChild(LI);
 
+    saveToLocalStorage(taskToAdd);
+
     document.getElementById("newTask").value="";
+
+    function addNewTask(){
+        function saveToLocalStorage(taskToAdd){
+
+            const TaskArray = JSON.parse(localStorage.getItem("toDoTask")) || [];
+
+            oldTask.push(taskToAdd);
+
+            console.log(taskToAdd);
+
+            console.log(TaskArray);
+
+            const newTaskArray = JSON.stringify(TaskArray);
+
+            localStorage.setItem("toDoTask",newTaskArray);      
+        }
+        function getTaskFormLocalStorage(){
+            const TaskArray = JSON.parse(localStorage.getItem("toDoTask")) || [];
+
+            console.log(TaskArray);
+        getTaskFormLocalStorage();
+        }
+    }
 }
